@@ -1,0 +1,26 @@
+class StoriesController < ApplicationController
+  before_action :authenticate_user!
+
+  def new
+    @story = current_user.stories.new
+  end
+
+  def create
+    @story = current_user.stories.new(story_params)
+    
+    if @story.save
+      redirect_to stories_path, notice: "故事新增成功"
+    else
+      render :new
+    end
+  end
+
+  def index
+  end
+
+  private
+  def story_params
+    params.require(:story).permit(:title, :content)
+  end
+
+end
