@@ -6,7 +6,7 @@
     <%= form.text_area :content, class: 'textarea is-primary', rows: 10 %>
   </div>
   <div>
-    <%= form.submit "儲存草稿", class: 'button is-light' %>
-    <%= form.submit "發布故事", class: 'button is-primary' %>
+    <%= form.submit "儲存草稿", name: "save_as_draft", class: 'button is-light' %>
+    <%= form.submit "發布故事", name: "publish", class: 'button is-primary' %>
   </div>
 <% end %>
