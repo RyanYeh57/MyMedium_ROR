@@ -1,3 +1,9 @@
+<% if @story.errors.any? %>
+  <div class="notification is-danger">
+    <%= story.errors.full_messages.to_sentence %>
+  </div>
+<% end %>
+
 <%= form_for(story) do |form| %>
   <div class="field">
     <%= form.label :title, "標題" %>
@@ -7,6 +13,7 @@
   </div>
   <div>
     <%= form.submit "儲存草稿", name: "save_as_draft", class: 'button is-light' %>
-    <%= form.submit "發布故事", name: "publish", class: 'button is-primary' %>
+    <%= form.submit "發布故事", name: "publish", class: 'button is-primary' if story.may_publish? %>
+    <%= form.submit "故事下架", name: "unpublish", class: 'button is-danger' if story.may_unpublish? %>
   </div>
 <% end %>

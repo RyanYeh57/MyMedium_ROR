@@ -2,14 +2,15 @@
 
 <% @stories.each do |story| %>
   <div class="content">
-    <h2 class="title"><%= story.title %>
+    <h2 class="title"><%= link_to story.title, edit_story_path(story), class: 'has-text-dark' %>
     <%= content_tag :span, '已發佈', class: 'tag is-primary' if story.published? %>
     </h2>
     <p><%= story.content %></p>
     <p>
       最後編輯時間：<%= time_ago_in_words(story.updated_at) %>
-      <%= link_to "編輯", edit_story_path(story), class:'button is-small is-primary' %>
-      <%= link_to "刪除", story_path(story), class:'button is-small is-danger', method: 'delete', data: {comfirm: "是否確定刪除?!"}  %>
+      <%= link_to "編輯", edit_story_path(story), class:'button is-link is-small' %>
+      <%= link_to "刪除", story_path(story), class:'button is-danger is-small', method: 'delete', data: {comfirm: "是否確定刪除?!"}  %>
     </p>
   </div><hr>
 <% end %>
+
