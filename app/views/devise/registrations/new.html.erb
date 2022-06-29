@@ -4,26 +4,31 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :username, '使用者帳號' %><br />
     <div class="control">    
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-danger', type: 'email', placeholder: 'Email input' %>
-    <p class="help is-danger">必需填寫</p>
+      <%= f.text_field :username, autofocus: true, class: 'input is-medium' %>
   </div>
 
   <div class="field">
-    <%= f.label :密碼 %>
+    <%= f.label :email %><br />
+    <div class="control">    
+      <%= f.email_field :email, class: 'input is-medium', type: 'email', placeholder: 'Email input' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :設定密碼 %>
     <div class="control is-primary">  
     <% if @minimum_password_length %>
     (<%= @minimum_password_length %> 位數字)
     <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" , class: 'input' %>
+    <%= f.password_field :password, autocomplete: "new-password" , class: 'input is-medium' %>
    </div>
   </div>
 
   <div class="field">
-    <%= f.label :密碼確認 %><br />
+    <%= f.label :再次確認密碼 %><br />
     <div class="control is-primary">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-medium' %>
     </div>
   </div>
 
