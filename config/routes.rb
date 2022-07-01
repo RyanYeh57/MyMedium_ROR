@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   #/@user
   get '@:username', to: 'pages#user', as: 'user_page'
-
+  get '/demo', to: 'pages#demo'
   resources :stories
 
   root "pages#index"

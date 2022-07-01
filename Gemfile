@@ -39,6 +39,8 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'aasm', '~> 5.0', '>= 5.0.6'
 gem 'friendly_id', '~> 5.3'
 gem 'babosa', '~> 1.0', '>= 1.0.3'
+gem 'webpacker', '~> 4.0', '>= 4.0.7'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +54,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'foreman', '~> 0.86.0'
 end
 
 group :test do
