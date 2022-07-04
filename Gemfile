@@ -40,6 +40,7 @@ gem 'aasm', '~> 5.0', '>= 5.0.6'
 gem 'friendly_id', '~> 5.3'
 gem 'babosa', '~> 1.0', '>= 1.0.3'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
+gem 'paranoia', '~> 2.4', '>= 2.4.2'
 
 
 group :development, :test do
