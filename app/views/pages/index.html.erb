@@ -83,14 +83,16 @@
           <div class="media-content">
             <h1><%= avatar(story.user, size: 50) %><%= link_to story.user.username, user_page_path(story.user.username), class: 'has-text-grey-dark' %><h1></br>
             <h2 class="title is-4"><%= link_to story.title, story_page_path(story.user.username, story.title), class: 'has-text-grey-dark' %></h2>
-            <p class="content"><%= story.content %></p>
+            <p class="content"><%= strip_tags(story.content).truncate(150) %></p>
             <footer>
               <p><%= time_ago_in_words(story.updated_at) %> · <%= link_to story.user.username, user_page_path(story.user.username), class: 'button is-small is-rounded is-light' %></p>
             </footer>
           </div>
+          <% if story.cover_image.attached? %>
           <figure class="media-right">
-            <img src="https://fakeimg.pl/150x150/">
+            <%= cover_image(story, size: 200) %>
           </figure>
+          <% end %>
         </article>
       <% end %>
     </section>

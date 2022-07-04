@@ -6,11 +6,21 @@
 
 <%= form_for(story) do |form| %>
   <div class="field">
-    <%=  %>
-    <%= form.label :title, "標題" %>
-    <%= form.text_field :title, class: 'input is-primary is-medium' %>
-    <%= form.label :content, "內容" %>
-    <%= form.text_area :content, class: 'textarea is-primary', rows: 10 %>
+    <div>
+      <%= cover_image(story) %><br>
+      <%= form.label :cover_image, "封面圖片" %>
+      <%= form.file_field :cover_image %>
+    </div>
+    
+    <div>
+      <%= form.label :title, "標題" %>
+      <%= form.text_field :title, class: 'input is-primary is-medium' %>
+    </div>
+    
+    <div>
+      <%= form.label :content, "內容" %>
+      <%= form.text_area :content, class: 'textarea is-primary', rows: 10 %>
+    </div>
   </div>
   <div>
     <%= form.submit "儲存草稿", name: "save_as_draft", class: 'button is-light' %>
