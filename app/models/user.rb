@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # relationships
   has_many :stories
+  has_many :comments
   has_one_attached :avatar
 
   # validations
