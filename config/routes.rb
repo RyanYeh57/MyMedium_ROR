@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       }
   
   resources :stories do
+    member do             #以 member 的方法新增POST的動作
+      post :clap
+    end
     resources :comments, only: [:create]
   end
 

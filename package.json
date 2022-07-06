@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.4.3",
+    "axios": "^0.27.2",
     "bulma": "^0.9.4",
     "stimulus": "^3.0.1",
     "webpack": "^4.46.0",
