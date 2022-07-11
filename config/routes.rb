@@ -4,10 +4,17 @@ Rails.application.routes.draw do
       }
   
   resources :stories do
-    member do             #以 member 的方法新增POST的動作
+    member do             #以 member 的方法新增 clap 的POST的動作
       post :clap
     end
     resources :comments, only: [:create]
+  end
+
+  #/users/:id/follow
+  resources :users, only: [] do
+    member do 
+      post :follow
+    end
   end
 
   #/@user/story.title
