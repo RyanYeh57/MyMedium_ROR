@@ -10,7 +10,7 @@ static targets = [ "clapCount" ]
     let slug = event.currentTarget.dataset.slug
     let target = this.clapCountTarget
 
-  axios.post(`/stories/${slug}/clap`) //不是單引號 
+  axios.post(`/api/stories/${slug}/clap`) //不是單引號 
       .then(function(response){
         let status = response.data.status
         switch (status){
