@@ -14,6 +14,7 @@ class Story < ApplicationRecord
   # relationships
   belongs_to :user
   has_many :comments 
+  has_many :bookmarks
   has_one_attached :cover_image
 
   # scopes

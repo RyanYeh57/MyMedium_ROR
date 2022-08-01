@@ -13,8 +13,11 @@ Rails.application.routes.draw do
     resources :stories, only: [] do
       member do             #以 member 的方法新增 clap 的POST的動作
         post :clap
+        post :bookmark
       end
     end
+
+
   end
   
   resources :stories do
