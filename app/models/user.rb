@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # instance method
   def bookmark?(story)
-    bookmarks.exsits(story: story)
+    bookmarks.exsits?(story: story)
   end
 
   def bookmark!(story)

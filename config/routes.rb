@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
 
+    post :upload_image, to:'utils#upload_image'
 
   end
   

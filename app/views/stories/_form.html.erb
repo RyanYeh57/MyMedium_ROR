@@ -4,7 +4,7 @@
   </div>
 <% end %>
 
-<%= form_for(story) do |form| %>
+<%= form_for(story, html: {class: 'story-editor'}) do |form| %>
   <div class="field">
     <div>
       <%= cover_image(story) %><br>
@@ -23,8 +23,15 @@
     </div>
   </div>
   <div>
-    <%= form.submit "儲存草稿", name: "save_as_draft", class: 'button is-light' %>
+    <% if story.published? %>
+      <%= form.submit "更新", name: "renew", class: 'button is-primary' %>
+    <% else %>
+      <%= form.submit "儲存草稿", name: "save_as_draft", class: 'button is-light' %>
+    <% end %>
+    
     <%= form.submit "發布故事", name: "publish", class: 'button is-primary' if story.may_publish? %>
     <%= form.submit "故事下架", name: "unpublish", class: 'button is-danger' if story.may_unpublish? %>
   </div>
 <% end %>
+
+<%= javascript_pack_tag 'editor' %>

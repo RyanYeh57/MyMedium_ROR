@@ -12,7 +12,7 @@
       <% end %>
 
       <%= link_to '#', class: 'bookmark_button', data: { action: 'user#bookmark' ,slug: @story.slug }  do %>
-        <% if user_signed_in? && current_user.bookmark?(story) %>
+        <% if user_signed_in? && current_user.bookmark?(@story) %>
           <i class ="fas fa-bookmark" data-target="user.bookmark" ></i>
         <% else %>
           <i class ="far fa-bookmark" data-target="user.bookmark" ></i>
@@ -25,7 +25,7 @@
       
       <!-- simple_format 自動換行及顯示超連結 -->
       <p>
-        <%= simple_format(@story.content) %>
+        <%= @story.content.html_safe %>
       </p>
 
       <footer data-controller="story">
